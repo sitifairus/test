@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        function validateForm() {
+            var x = document.forms["form"]["txtMark"].value;
+            if (x == null || x == "") {
+                alert("Mark must be filled out");
+                return false;
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div>Mark Calculation</div>
+        <div>
+            <form name="form" action="./markServlet" method="GET" onsubmit="return validateForm()">
+            <table align="center">
+                <tr>
+                    <td colspan="3">
+                        <b>Mark in Percentage :  </b>
+                        <input type="text" name="txtMark" id = "txtMark">
+                    </td>
+                </tr>
+                <tr align="right">
+                    <td></td>
+                    <td>
+                    Grade<input type="checkbox" name="gradeCheckBox" value="Grade">
+                    </td>
+                    <td>
+                    Point<input type="checkbox" name="pointCheckBox" value="Point">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td></td>
+                    <td></td>
+                    <td colspan="3">
+                    <input type="submit" name="convertButton" value="Convert">
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </body>
+</html>

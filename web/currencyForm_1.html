@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div><form name = "BMI" action="./CurrencyServlet" method="GET">
+        <table style="width:100%">
+            <tr >
+                <th colspan="2">
+                    Currency Converter
+                </th>
+            </tr>
+          <tr>
+              <td><h3> VDN:</h3>
+                <input type="text" name="txtVDN" value = "txtVDN">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <input type="radio" name="usd" value = "USD">
+                <input type="radio" name="usd" value = "EUR">
+                <input type="radio" name="usd" value = "JPY">
+              </td>
+          </tr>
+          <tr>
+              <td>
+              <input type="submit" value="Calculate BMI" name="calcBMI">
+              </td>
+          </tr>        
+        </table>
+            </form>
+        </div>
+        <div>
+              <table border="1" >
+              <tr>
+                <td>Currency</td>
+                <td>Exchange Rates</td>		
+              </tr>
+              <tr>
+                <td>USD</td>
+                <td>16,452</td>		
+              </tr>
+              <tr>
+                <td>EUR</td>
+                <td>25,170.38</td>		
+              </tr>
+              <tr>
+                <td>JPY</td>
+                <td>151.23</td>		
+              </tr>
+            </table>
+        </div>
+    </body>
+</html>

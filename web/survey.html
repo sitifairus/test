@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WARNARadio Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/scripts/jquery.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+        function validateForm() {
+            var fname = document.forms["form"]["fName"].value;
+            var lname = document.forms["form"]["lName"].value;
+            var email = document.forms["form"]["email"].value;
+            var contact = document.forms["form"]["contact"].value;
+            var ch1 = document.forms["form"]["ch1"].value;
+            var ch2 = document.forms["form"]["ch2"].value;
+            var ch3 = document.forms["form"]["ch3"].value;
+            var ch4 = document.forms["form"]["ch4"].value;
+            var ch5 = document.forms["form"]["ch5"].value;
+            var ch6 = document.forms["form"]["ch6"].value;
+            var decade = document.forms["form"]["decade"].value;
+            var listen = document.forms["form"]["listen"].value;
+            var place1 = document.forms["form"]["place1"].value;
+            var place2 = document.forms["form"]["place2"].value;
+            var place3 = document.forms["form"]["place3"].value;
+            //var place1 = document.forms["form"]["place1"].value;
+            
+            if (fname == null || fname == ""||lname == null || lname == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (email == null || email == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            if (contact == null || contact == "") {
+                alert("Contact must be filled out");
+                return false;
+            }
+            if (ch1==null&&ch2==null&&ch3==null&&ch4==null&&ch5==null&&ch6==null) {
+                alert("Please select atlest one Musical Preference!");
+                return false;
+            }
+            if (decade==null||decade=="") {
+                alert("Please Select Decade...");
+                return false;
+            }
+            
+            if (listen==0) {
+                alert("Please Select Frequency ...");
+                return false;
+            }
+            if (place1==null&&place2==null&&place3==null) {
+                alert("Please Select Prefer Place to Listen...");
+                return false;
+            }
+            
+        }
+        </script>
+    </head>
+    <body bgcolor="#E6E6E6" text="#000000">
+        <div style="padding:20px; background-color:lightgray; "><h2> WARNARadio Survey</h2></div>
+        <form class="form-horizontal" role="form" name="form" action="./surveyServlet" method="GET" onsubmit="return validateForm()">
+            
+            <table>
+                <tr align="center">
+                    <td>First Name :</td>
+                    <td><input type="text" name="fName" size=15 value=""></td>
+                    <td>Last Name :</td>
+                    <td><input type="text" name="lName" size=15 value=""></td>
+                </tr>
+                <tr >
+                    <td colspan="4">Email : <input type="text" name="email" size=35 maxlength=50 value=""></td>
+                </tr>
+                <tr>
+                    <td colspan="4">Contact Number :<input type="text" name="contact" size=35 maxlength=50 value=""></td>
+                </tr>
+            </table>
+        <br>
+        <h3>1. Musical Preference:</h3>
+        Easy Listening<input type="checkbox" name="ch1" value="Easy Listening">
+        <br>Rock n’ Roll<input type="checkbox" name="ch2" value="Rock n’ Roll">
+        <br>Jazz<input type="checkbox" name="ch3" value="Jazz">
+        <br>Classical<input type="checkbox" name="ch4" value="Classical">
+        <br>Folk<input type="checkbox" name="ch5" value="Folk">
+        <br>Heavy Metal<input type="checkbox" name="ch6" value="Heavy Metal">
+        <h3>2. Favorite Music Decade</h3>
+        
+        <select name="decade">
+            <option value="">Select Decade...</option>
+            <option value="Fifties">Fifties</option>
+            <option value="Sixties">Sixties</option>
+            <option value="Seventies">Seventies</option>
+            <option value="Eighties">Eighties</option>
+            <option value="Nineties">Nineties</option>
+            <option value="Tens">Tens</option>
+        </select>
+
+        <h3>3. Days of the week most prefer to listen to the radio</h3>
+        <input type="radio" name="day" value="monday" checked>Monday
+        <br><input type="radio" name="day" value="tuesday">Tuesday
+        <br><input type="radio" name="day" value="wednesday">Wednesday
+        <br><input type="radio" name="day" value="Thursday">Thursday
+        <br><input type="radio" name="day" value="friday">Friday
+        <br><input type="radio" name="day" value="saturday">Saturday
+        <br><input type="radio" name="day" value="sunday">Sunday
+
+        <h3>4. I listen to WARNARadio </h3>
+        <select name="listen">
+            <option value="0">Select Frequency ...</option>
+            <option value="Every Day">Every Day</option>
+            <option value="One Day a Week">One Day a Week</option>
+            <option value="2 or 3 Days">2 or 3 Days</option>
+            <option value="4 or 5 Days">4 or 5 Days</option>
+        </select>
+
+        <h3>5. Prefer to Listen</h3>
+        At home?<input type="checkbox" name="place1" value=" at home">
+        <br>In your car?<input type="checkbox" name="place2" value=" in the car">
+        <br>At work?<input type="checkbox" name="place3" value=" at work">
+
+        <h3>6. Additional Comment</h3>
+        <textarea name="comment" rows="8" cols="70">
+Please write your comment here...
+        </textarea>
+
+        <br><br><input type="checkbox" name="subscribe" value="subscribe">Subscribe to newsletter
+
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+   </form>
+    </body>
+</html>
